@@ -22,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void test3(){
-
+        Intent intent = new Intent(this, Page4Activity.class);
+        startActivityForResult(intent, 100);
     }
     public void test4(){
-
+        Intent intent = new Intent(this, Page5Activity.class);
+        startActivityForResult(intent, 200);
     }
     public void test34(View view){
         if (view == test3) {
@@ -73,6 +75,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.i("brad", "onStop");
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.i("brad", "back: " + requestCode + " : " + resultCode);
+        if (requestCode == 200){
+            int data1 = data.getIntExtra("data1", -1);
+            String data2 = data.getStringExtra("data2");
+            Log.i("brad", data1 + " : " + data2);
+        }
     }
 
     @Override
