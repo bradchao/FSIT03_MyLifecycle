@@ -15,7 +15,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void test2(){
-
+        Intent intent = new Intent(this, Page3Activity.class);
+        intent.putExtra("username", "Brad");
+        intent.putExtra("stage", (int)(Math.random()*100));
+        intent.putExtra("sound", false);
+        startActivity(intent);
     }
     public void test3(){
 
