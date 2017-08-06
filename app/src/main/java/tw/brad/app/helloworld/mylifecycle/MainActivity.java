@@ -1,5 +1,6 @@
 package tw.brad.app.helloworld.mylifecycle;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,20 +11,23 @@ public class MainActivity extends AppCompatActivity {
     private View test2, test3, test4;
 
     public void test1(View view){
+        Intent intent = new Intent(this, Page2Activity.class);
+        startActivity(intent);
+    }
+    public void test2(){
 
     }
-    public void test3(View view){
+    public void test3(){
 
     }
-    public void test4(View view){
+    public void test4(){
 
     }
     public void test34(View view){
-
         if (view == test3) {
-            Log.i("brad", "test3");
+            test3();
         }else if (view == test4){
-            Log.i("brad", "test4");
+            test4();
         }
     }
 
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         test2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("brad", "test2");
+                test2();
             }
         });
         test3 = findViewById(R.id.test3);
