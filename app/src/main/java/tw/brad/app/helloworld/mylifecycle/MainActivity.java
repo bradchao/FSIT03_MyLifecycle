@@ -7,8 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import static tw.brad.app.helloworld.mylifecycle.MainApp.data4;
+
 public class MainActivity extends AppCompatActivity {
     private View test2, test3, test4;
+    private MainApp mainApp;
 
     public void test1(View view){
         Intent intent = new Intent(this, Page2Activity.class);
@@ -52,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
         });
         test3 = findViewById(R.id.test3);
         test4 = findViewById(R.id.test4);
+
+        mainApp = (MainApp) getApplication();
+        Log.i("brad", "MainApp:username = " + mainApp.username);
+        Log.i("brad", "MainApp:data3 = " + mainApp.data3);
+        Log.i("brad", "MainApp:data4 = " + data4);
+        mainApp.data3 = 444;
 
     }
     @Override

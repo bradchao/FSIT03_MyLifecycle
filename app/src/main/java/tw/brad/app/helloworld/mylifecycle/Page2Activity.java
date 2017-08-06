@@ -6,8 +6,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import static tw.brad.app.helloworld.mylifecycle.MainApp.data4;
+
 public class Page2Activity extends AppCompatActivity {
     private long lastKeyTime;
+    private MainApp mainApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +18,12 @@ public class Page2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_page2);
 
         lastKeyTime = System.currentTimeMillis();
+
+        mainApp = (MainApp) getApplication();
+        Log.i("brad", "MainApp:username = " + mainApp.username);
+        Log.i("brad", "MainApp:data3 = " + mainApp.data3);
+        Log.i("brad", "MainApp:data4 = " + data4);
+
     }
 
     public void doExit(View view){
